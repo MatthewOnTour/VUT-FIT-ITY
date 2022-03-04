@@ -1,0 +1,139 @@
+ 
+  \documentclass[a4paper, 11pt, twocolumn]{article}
+
+  \usepackage[utf8]{inputenc}
+  \usepackage[czech]{babel}
+  \usepackage[IL2]{fontenc}
+  \usepackage{amssymb}
+  \usepackage{amsmath}
+  \usepackage{amsthm}
+  \usepackage{times}
+  \usepackage[unicode]{hyperref}
+  \usepackage[total={18cm,25cm}, top=2.5cm, left=1.5cm]{geometry}
+
+  
+  %--------------------------------------------
+  \newtheorem{theorem}{Definice}
+  \newtheorem{veta}{Věta}
+  
+  \begin{document}
+  
+  \begin{titlepage}
+    \begin{center} 
+    \Huge
+    \textsc{Fakulta informačních technologií \\ Vysoké učení technické v~Brně\\}
+    \vspace{\stretch{0.382}}
+    \LARGE Typografie a publikování\,--\ 2. projekt \\ Sazba dokumentů a matematických výrazů
+    \vspace{\stretch{0.618}}
+    \end{center}
+    \Large \the \year \hfill Matúš Juštik (xjusti00)
+
+  \end{titlepage}
+  
+
+%--------------------------------------------  
+  \section*{Úvod}
+V~této úloze si vyzkoušíme sazbu titulní strany, matematic\-kých vzorců, prostředí a dalších textových 
+struktur obvyklých pro technicky zaměřené texty (například rovnice (\ref{term1})
+nebo Definice \ref{ref1} na straně \pageref{ref1}). Rovněž si vyzkoušíme používání odkazů \verb|\ref| a \verb|\pageref|.\par
+Na titulní straně je využito sázení nadpisu podle optického středu s~využitím zlatého řezu. Tento postup byl
+probírán na přednášce. Dále je použito odřádkování se
+zadanou relativní velikostí 0.4 em a 0.3 em.\par
+V~případě, že budete potřebovat vyjádřit matematickou
+konstrukci nebo symbol a nebude se Vám dařit jej nalézt
+v~samotném \LaTeX u, doporučuji prostudovat možnosti balíku maker \AmS-\LaTeX.
+  
+%-------------------------------------------- 
+  \section{Matematický text}
+Nejprve se podíváme na sázení matematických symbolů a výrazů v~plynulém textu včetně sazby
+definic a vět\- s~vy\-užitím balíku \verb|amsthm|. Rovněž použijeme poznámku pod čarou s~použitím příkazu
+\verb|\footnote|. Někdy je vhodné použít konstrukci \verb|\mbox{}|, která říká, že text nemá být zalomen.
+
+\begin{theorem}\label{ref1}
+\textnormal{Rozšířený zásobníkový automat} \textit{(RZA)} je de\-finován jako sedmice tvaru A~= ($Q$, $\Sigma$, $\Gamma$, $\delta$, $q_{0}$, $Z_{0}$, $F$), kde:
+ \begin{itemize}
+  \item  $Q$ je konečná množina \textnormal{vnitřních (řídicích) stavů,}
+  \item  $\Sigma$ je konečná \textnormal{vstupní abeceda,}
+  \item  $\Gamma$ je konečná \textnormal{zásobníková abeceda,}
+  \item  $\delta$ je \textnormal{přechodová funkce} $Q \times(\Sigma \cup\{\epsilon\}) \times \Gamma^{*} \rightarrow 2^{Q \times \Gamma^{*}}$,
+  \item $q_{0} \in Q$ je \textnormal{počáteční stav,} $Z_{0} \in \Gamma$ je \textnormal{startovací symbol
+zásobníku} a $F \subseteq Q$ je množina \textnormal{koncových stavů.}
+\end{itemize}
+\end{theorem}
+
+
+\par Nechť $P=\left (Q, \Sigma, \Gamma, \delta, q_{0}, Z_{0}, F\right)$ je rozšířený zásobníkový automat.
+Konfigurací nazveme trojici ($q$, $w$, $\alpha)\in$ $Q \times \Sigma^{*} \times \Gamma^{*}$, kde $q$ je aktuální 
+stav vnitřního řízení, w je dosud nezpracovaná část vstupního řetězce a $\alpha=$ $Z_{i_{1}} Z_{i_{2}} \ldots
+Z_{i_{k}}$ je obsah  
+zásobníku\footnote{$Z_{i_{1}}$ je vrchol zásobníku}.
+
+\subsection{Podsekce obsahující větu a odkaz}
+\begin{theorem}
+\textnormal{Řetězec $w$ nad abecedou $\Sigma$ je přijat RZA}
+A~jestliže ($q_{0}$, $w$, $Z_{0}$) $\overset{*}{\underset{A}{\vdash}}$ ($q_{F}$, $\epsilon$, $\gamma$) pro nějaké $\gamma \in \Gamma^{*}$ $a$ $q_{F} \in F$.
+Množinu L(A) = $\{w \mid w$ je přijat \textit{RZA A}$\}$\- $\subseteq$  $\Sigma^{*}$~nazýváme \textnormal{jazyk přijímaný RZA} A.
+\end{theorem}
+
+\textnormal{Nyní si vyzkoušíme sazbu vět a důkazů opět s~použitím
+balíku} \verb|amsthm|.
+\begin{veta}
+Třída jazyků, které jsou přijímány ZA, odpovídá
+\textnormal{bezkontextovým jazykům.}
+\begin{proof}
+V~důkaze vyjdeme z~Definice \ref{term1} a \ref{term2}.
+\end{proof}
+\end{veta}
+
+  
+%-------------------------------------------- 
+\section{Rovnice a odkazy}
+Složitější matematické formulace sázíme mimo plynulý
+text. Lze umístit několik výrazů na jeden řádek, ale pak je
+třeba tyto vhodně oddělit, například příkazem \verb|\quad|.\vfill
+$$ \sqrt[i]{x_{i}^{3}}\quad \textrm{kde } x_{i} \textrm{ je }{i} \textrm{-té sudé číslo splňující}\quad x_{i}^{x_{i}^{i^{2}}+2} \leq y_{i}^{x_{i}^{4}}$$
+\par
+V~rovnici (1) jsou využity tři typy závorek s~různou
+explicitně definovanou velikostí.
+\begin{eqnarray}\label{term1}
+x& = &\bigg[\Big\{\big[a+b\big] * c\Big\}^{d} \oplus 2\bigg]^{3 / 2}\\
+y& = &\lim _{x \rightarrow \infty} \frac{\frac{1}{\log _{10} x}}{\sin ^{2} x+\cos ^{2} x}\nonumber
+\end{eqnarray}
+\par
+V~této větě vidíme, jak vypadá implicitní vysázení limity $\lim _{n \rightarrow \infty} f(n)$ v~normálním odstavci textu. Podobně je~to i s~dalšími symboly jako $\prod_{i=1}^{n} 2^{i}$ či $\bigcap_{A \in \mathcal{B}} A$. V~případě vzorců $\lim\limits_{n\to\infty}f(n)$ a~$\overset{n}{\underset{i=1}{\prod}} 2^i$ jsme si vynutili méně úspornou sazbu příkazem  \verb|\limits|.
+\begin{eqnarray}\label{term2}
+\int_{b}^{a} g(x) \mathrm{d} x& = &-\int_{a}^{b} f(x) \mathrm{d} x
+\end{eqnarray}
+%--------------------------------------------  
+  \section{Matice}
+  Pro sázení matic se velmi často používá prostředí  \verb|array|
+a závorky (\verb|\left|, \verb|\right|).
+$$
+\left(\begin{array}{ccc}
+a-b & \widehat{\xi+\omega} & \pi \\
+\vec{\mathbf{a}} & \overleftrightarrow{A C} & \hat{\beta}
+\end{array}\right)=1 \Longleftrightarrow \mathcal{Q}=\mathbb{R}
+$$
+ $$
+\mathbf{A}=\left\|\begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1 n} \\
+a_{21} & a_{22} & \ldots & a_{2 n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m 1} & a_{m 2} & \ldots & a_{m n}
+\end{array}\right\|=\left|\begin{array}{cc}
+t & u \\
+v & w
+\end{array}\right|=t w \--\ uv
+$$
+ \par
+ Prostředí \verb|array| lze úspěšně využít i jinde.
+ $$
+\binom{n}{k} = \left\{\begin{array}{cl}
+0 & \text { pro } k<0 \text { nebo } k>n \\
+\frac{n !}{k !(n-k) !} & \text { pro } 0 \leq k \leq n.
+\end{array}\right.
+$$
+  
+%--------------------------------------------  
+
+  \end{document}

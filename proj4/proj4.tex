@@ -1,0 +1,67 @@
+\documentclass[a4paper, 11pt]{article}
+
+  \usepackage[utf8]{inputenc}
+  \usepackage[czech]{babel}
+  \usepackage{times}
+  \usepackage[unicode]{hyperref}
+  \usepackage[total={17cm,24cm}, top=3cm, left=2cm]{geometry}
+  \usepackage{graphics}
+ 
+
+
+  
+  
+  %--------------------------------------------
+  \begin{document}
+  
+  \begin{titlepage}
+    \begin{center} 
+    \textsc{\Huge Vysoké učení technické v~Brně\\ \huge Fakulta informačních technologií \\}
+    \vspace{\stretch{0.382}}
+    \LARGE Typografie a publikování\,--\ 3. projekt \\ \Huge Tabulky a obrázky
+    \vspace{\stretch{0.618}}
+    \end{center}
+    \Large \today \hfill Matúš Juštik
+
+  \end{titlepage}
+
+\section{\LaTeX}
+\subsection{Ako funguje}
+\LaTeX \ je značkovacím jazykem, který je založen na jádru programu \TeX. Ten poskytuje
+v~základu primitivní sázecí operace. Z~nich jsou skládány složitější bloky příkazů neboli
+takzvaná makra. Autoři vytvořili nejjednodušší formát pro tvorbu dokumentu - PlainTex.
+Z~něj vychází všechny ostatní formáty a při překladu se pro něj používá jiných kompilátorů.
+Holá kostra umožňuje plnou kontrolu nad vlastnostmi a sazbou textu, ale je nutná hlubší
+znalost celého programovacího jazyka. \cite{FITMT13353}
+
+\subsection{Čo je \LaTeX}
+Systém \LaTeX\ je balík maker pre DTP systém \TeX. Nie je sádzajúcim programom, ale jeho nadstavbou. \par
+Teda uľachčuje používanie \TeX u, ktorý zhrnie spracovanie dokomuentu ako takého a jeho prvky tak, aby
+čo najviac zrýchlili písanie inak zložitých a zdlhavých postupou, ktoré \TeX poskytuje. \cite{FITMT13471}
+
+\subsection{Divná výslovnosť?}
+Výslovnosť sa vie stretnúť s~neporozumením, keďže latex je guma a \LaTeX je  niečo iné. Teda \LaTeX sa číta následovne [latech] alebo len [tech], a latex [latex]. Meno vzniklo aj po tvorcovi \LaTeX u Leslie Lamport-ovi, "Lamportův TeX". \cite{Martinek}
+
+\subsection{Bibliografia}
+Bibliografia je podstatna časť \LaTeX pri vedeckych publikáciach. \cite{kopka1995guide}
+Program bibtex je nástroj, ktorý vygenerované \TeX príkazy zahrnie do \LaTeX documentu na
+znázornenie/zobrazenie zoznamu preferencií. \cite{thummala2007bibliography}
+
+\section{Informatika-Arduino}
+\subsection{Čo je Arduino}
+Arduine je mikrokontrolér, teda je to malý počítač a na jednom zapojenom obehu obsahuje jadro procesora, pamäť a proprogramovateľné input/output periféria. \cite{smith2011introduction}
+
+\subsection{Jayzk C}
+Štandard C++, ktorý sa používa pri práci s~arduino je mierne poupravený. \par Každopádne preberá
+všetky štandardné knižnice z~C ako tak aj svoje vlastné. Urobia rovnakú prácu aj v~C aj C++.
+\cite{eckel2000myslime} 
+
+\subsection{Funkcie}
+Funkcie z~C++ fungujú rovnako ako na každom jednom progeamovacom jazyku. Je to akoby taký program v~programe. Funkciu, ktorú definujete, môžeme zavolať odkiaľkoľvek v~programe, kde sa nachádzajú aj premenné. \cite{monk2016programming}
+	
+	\newpage
+	\bibliographystyle{czechiso}
+	\bibliography{proj4}
+
+
+\end{document}

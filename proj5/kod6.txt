@@ -1,0 +1,19 @@
+typedef struct vrchol {
+    int info;
+    struct vrchol *ls, *ps;    
+} TVrchol;
+
+
+void vloz(TVrchol **koren, int x)
+{
+   if (*koren == NULL) {
+       *koren = (TVrchol*)malloc(sizeof(TVrchol));
+      (*koren)->info = x;
+      (*koren)->ls = NULL;
+      (*koren)->ps = NULL;
+   }
+   else {
+      if (x < (*koren)->info) vloz(&((*koren)->ls), x);
+      else vloz(&((*koren)->ps), x);
+   }
+}
